@@ -140,7 +140,13 @@ li {
   .subscription h2 {
     font-size: 64px;
   }
-
+  .subscription__form {
+    min-width:auto;
+  }
+  .subscription__form button {
+    min-width:120px;
+    font-size:12px;
+  }
 
   .footer {
     flex-direction: column;
