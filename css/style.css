@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+/* other css file imports */
+@import url("sections/header.css");
+@import url("sections/hero.css");
+@import url("sections/about.css");
+@import url("sections/popular.css");
+@import url("sections/trending.css");
+@import url("sections/subscribe.css");
+@import url("sections/footer.css");
+
+/* CSS variables for reusablity across all files (including above imported) */
+:root {
+  --playfair-display: "Playfair Display", serif;
+  --plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+
+  --primary-color: #b1454a;
+  --secondary-color: #121212;
+
+  --black-200: #020202;
+  --black-300: #333333;
+  --black-400: #1f1e31;
+  --black-500: #555555;
+  --gray-100: #888888;
+
+  --color-white: #fff;
+  --color-creamson: #fff0de;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: var(--color-creamson);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sushi__subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: var(--plus-jakarta-sans);
+
+  color: var(--primary-color);
+  opacity: 0.8;
+
+  letter-spacing: -0.01em;
+}
+
+.sushi__title {
+  font-size: 64px;
+  font-weight: 600;
+  font-family: var(--playfair-display);
+
+  color: var(--secondary-color);
+
+  margin-top: 16px;
+}
+
+.sushi__description {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: var(--plus-jakarta-sans);
+
+  line-height: 36px;
+  letter-spacing: -0.01em;
+
+  color: var(--secondary-color);
+  opacity: 0.8;
+
+  margin: 32px 0px;
+}
+
+
+/* START: about us media queries */
+
+
+@media (max-width: 767.98px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-image img {
+    width: 100%;
+  }
+
+  .hero-content-info h1 {
+    font-size: 64px;
+  }
+  .about-us {
+    flex-direction: column;
+  }
+  .about-us__content .sushi__title {
+    font-size: 40px;
+  }
+
+  .about-us__images div {
+    padding: 32px 40px;
+  }
+
+  .trending__discover, .trending__arrow {
+    display: none;
+  }
+
+  .trending-sushi,
+  .trending-drinks {
+    flex-direction: column;
+  }
+
+  .trending__image {
+    order: 1;
+  }
+
+  .subscription h2 {
+    font-size: 64px;
+  }
+
+
+  .footer {
+    flex-direction: column;
+  }
+  .footer__nav {
+    flex-direction: column;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .popular-foods__card.active-card {
+    order: -1;
+    flex-basis: 100%;
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .header__menu-mobile {} 
+
+  .trending__discover {
+    top: 43%;
+    left: 41%;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .popular-foods__card.active-card {
+    order: -1;
+    flex-basis: 100%;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+}
